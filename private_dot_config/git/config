@@ -3,7 +3,7 @@ defaultBranch = main
 
 [credential]
 # https://git-scm.com/docs/gitcredentials#Documentation/gitcredentials.txt-cache
-helper = cache
+helper = cache --timeout=99999  # ~1 day
 
 [diff]
 # https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffsubmodule
