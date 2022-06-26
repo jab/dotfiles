@@ -1,0 +1,26 @@
+[init]
+defaultBranch = main
+
+[credential]
+# https://git-scm.com/docs/gitcredentials#Documentation/gitcredentials.txt-cache
+helper = cache
+
+[diff]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffsubmodule
+submodule = diff
+
+[pager]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pagerltcmdgt
+branch = false
+
+[push]
+# https://git-scm.com/docs/git-push#_examples
+default = current
+
+[transfer]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-transferfsckObjects
+fsckObjects = true
+
+[user]
+email = jabronson@gmail.com
+name = Joshua Bronson
