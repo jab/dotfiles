@@ -37,6 +37,7 @@ function add_abbrevs
   abbr -a -- v vim
 
   abbr -a -- g git
+  abbr -a -- glg 'git log'
   abbr -a -- gst 'git status'
   abbr -a -- gsw 'git switch'
   abbr -a -- gdi 'git diff'
