@@ -1,5 +1,5 @@
 if status is-interactive
-  set -gx EDITOR emacs
+  set -gx EDITOR vim
   set -gx LESS -iR
 
   if test python || test python3
