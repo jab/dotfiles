@@ -13,7 +13,6 @@
       (fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master")
     ];
 
-  # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
 
@@ -27,10 +26,7 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = { keyMap = "us"; };
-
   time.timeZone = "America/New_York";
-
-  virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
     nix-index
@@ -60,12 +56,14 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  ## Services to enable:
   services.openssh.enable = true;
   services.tailscale.enable = true;
   services.vscode-server.enable = true;
 
+  virtualisation.docker.enable = true;
+
   security.sudo.wheelNeedsPassword = false;
+
   users.extraUsers = {
     jab = {
       createHome = true;
@@ -73,7 +71,7 @@
       extraGroups = [ "wheel" "docker" ];
       isNormalUser = true;
       openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKt4OvPXGAMKyfKC3CF9EyQl92mHV293r9gEElfDZ6+F jab" ];
-    };  
+    };
   };
 
   # This value determines the NixOS release from which the default
