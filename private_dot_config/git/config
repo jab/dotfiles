@@ -1,6 +1,10 @@
 [init]
 defaultBranch = main
 
+[commit]
+# Show the diff. https://git-scm.com/docs/git-config#Documentation/git-config.txt-commitverbose
+verbose = true
+
 [credential]
 # https://git-scm.com/docs/gitcredentials#Documentation/gitcredentials.txt-cache
 helper = cache --timeout=99999  # ~1 day
