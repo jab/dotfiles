@@ -48,6 +48,10 @@ function add_abbrevs
   abbr -a -- grs 'git restore'
   abbr -a -- gco 'git checkout'
 
+  if type -q lsd  # https://github.com/Peltoche/lsd
+    abbr -a -- l 'lsd -la'
+  end
+
   if type -q chezmoi  # https://chezmoi.io
     abbr -a -- ch chezmoi
   end
