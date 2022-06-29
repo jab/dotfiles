@@ -34,6 +34,7 @@
     tailscale
     lsd
     procs
+    file
     rm-improved
     moreutils
     ripgrep

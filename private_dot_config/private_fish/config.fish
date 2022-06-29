@@ -29,6 +29,8 @@ end
 
 function add_abbrevs
   abbr -a -- c command
+  abbr -a -- t type
+
   abbr -a -- cp 'cp -iv'
   abbr -a -- mv 'mv -iv'
   abbr -a -- rm 'rm -iv'
