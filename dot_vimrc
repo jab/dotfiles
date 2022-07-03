@@ -1,5 +1,4 @@
 autocmd!
-setlocal spell
 set nocompatible
 set hidden  " allow unsaved background buffers and remember marks/undo for them
 set history=10000  " remember more commands and search history
@@ -18,7 +17,6 @@ set cmdheight=1
 set switchbuf=useopen  " jump to the first open window that contains the specified buffer
 set scrolloff=5  " keep more context when scrolling off the end of a buffer
 
-" Don't make backups at all
 set nobackup
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -27,18 +25,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set showcmd  " display incomplete commands
 
-syntax on  " enable syntax highlighting
-
-filetype plugin indent on  " enable filetype detection, etc.
-
-set wildmenu  " make tab completion for files/buffers act like bash (Ctrl-D to activate)
+set wildmenu
 set wildignore+=*.so,*.swp,*.zip,*.egg-info
 
 set timeout timeoutlen=1000 ttimeoutlen=100  " Fix slow O inserts
-
-" Normally, Vim messes with iskeyword when you open a shell file. This can leak out, polluting other
-" file types even after a 'set ft=' change. This prevents the iskeyword change.
-let g:sh_noisk=1
 
 set modeline
 set modelines=3
@@ -54,95 +44,6 @@ set diffopt=vertical
 " after 4000 ms of inactivity)
 set updatetime=200
 
-" Use persistent undo history.
-if !isdirectory("/tmp/.vim-undo-dir")
-  call mkdir("/tmp/.vim-undo-dir", "", 0700)
-endif
-set undodir=/tmp/.vim-undo-dir
-set undofile
-
-" CUSTOM AUTOCMDS
-augroup vimrcEx
-  " Clear all autocmds in the group
-  autocmd!
-
-  " Jump to last cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  autocmd FileType python set sw=4 sts=4 et
-
-  " Leave the return key alone when in command line windows, since it's used to run commands there.
-  autocmd! CmdwinEnter * :unmap <cr>
-  autocmd! CmdwinLeave * :call MapCR()
-augroup END
-
-
-" COLOR
-set termguicolors
-set background=dark
-
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-" MISC KEY MAPS
-" Move around splits with <c-hjkl>
-" make ; same as :
-nnoremap ; :
-" use jj to get back to normal mode
-inoremap jj <ESC>
-
-" unhighlight currently-highlighted search match on <esc> (until <n> is pressed again)
-nnoremap <esc> :noh<cr>
-nnoremap <leader><space> :noh<cr>
-
-nnoremap <leader>s :syntax sync fromstart<cr>
-
-nnoremap <leader>p :set paste<cr>
-nnoremap <leader>p :set paste<cr>
-nnoremap <leader>P :set nopaste<cr>
-
-" strip all trailing whitespace in current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-" fold tag
-nnoremap <leader>ft Vatzf
-
-" re-hardwrap paragraph
-nnoremap <leader>q gqip
-
-" reselect text that was just pasted
-nnoremap <leader>v V`]
-
-" :vs ~/.vimrc to add to it on the fly
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-
-nnoremap <leader>R :redraw!<cr>
-
-" open a new vertical split and switch to it
-nnoremap <leader>w <C-w>v<C-w>l
-
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-map <leader>y "*y
-" Can't be bothered to understand ESC vs <c-c> in insert mode
-imap <c-c> <esc>
-" Align selected lines
-vnoremap <leader>ib :!align<cr>
-" <leader><leader> is more convenient than <c-^>
-nnoremap <leader><leader> <c-^>
-
-" SHORTCUT TO REFERENCE CURRENT FILE'S PATH IN COMMAND LINE MODE
-cnoremap <expr> %% expand('%:h').'/'
-
-" OPEN FILES IN DIRECTORY OF CURRENT FILE
-" cnoremap %% <C-R>=expand('%:h').'/'<cr>
-" map <leader>e :edit %%
-" map <leader>v :view %%
-
 set autochdir
 set encoding=utf-8
 set ruler
@@ -151,13 +52,13 @@ set ttyfast
 set visualbell
 
 set gdefault  " turn the :substitute flag 'g' on by default
+setlocal spell
 
-" abbreviations
-abbr pdb; import pdb; pdb.set_trace()
-abbr ifnm if __name__ == '__main__':
+set termguicolors
+set background=dark
 
-" long lines
-highlight ColorColumn guibg=Black ctermbg=black
+" line length
+highlight ColorColumn ctermbg=gray guibg=gray
 set colorcolumn=100
 set textwidth=100
 set wrap
@@ -179,13 +80,86 @@ autocmd BufWinLeave * call clearmatches()
 nnoremap j gj
 nnoremap k gk
 
-" get rid of help key you mistakenly hit aiming for escape
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" yankring
-nnoremap <silent> <F3> :YRShow<cr>
-inoremap <silent> <F3> <ESC>:YRShow<cr>
-
 command SudoSave :w !sudo tee %
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" Normally, Vim messes with iskeyword when you open a shell file. This can leak out, polluting other
+" file types even after a 'set ft=' change. This prevents the iskeyword change.
+let g:sh_noisk=1
+
+syntax on  " enable syntax highlighting
+
+filetype plugin indent on  " enable filetype detection, etc.
+
+abbr pdb; import pdb; pdb.set_trace()
+abbr ifnm if __name__ == '__main__':
+
+" Use persistent undo history.
+if !isdirectory("/tmp/.vim-undo-dir")
+  call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
+nnoremap <leader>p :set paste<cr>
+nnoremap <leader>P :set nopaste<cr>
+nnoremap ; :
+inoremap jj <ESC>
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" open a new vertical split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" re-hardwrap paragraph
+nnoremap <leader>q gqip
+
+" reselect text that was just pasted
+nnoremap <leader>v V`]
+
+" Align selected lines
+vnoremap <leader>ib :!align<cr>
+
+map <leader>y "*y
+
+nnoremap <leader>s :syntax sync fromstart<cr>
+
+" Switch to alternate file
+nnoremap <leader><leader> <c-^>
+
+" Unhighlight currently-highlighted search match (until <n> is pressed again)
+nnoremap <leader><space> :noh<cr>
+
+" :vs ~/.vimrc to add to it on the fly
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+nnoremap <leader>r :redraw!<cr>
+
+" Shortcut to reference current file's path in command line mode
+cnoremap <expr> %% expand('%:h').'/'
+
+" Open files in directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" Custom autocmds
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  autocmd FileType python set sw=4 sts=4 et
+
+  " Leave the return key alone when in command line windows, since it's used to run commands there.
+  autocmd! CmdwinEnter * :unmap <cr>
+  autocmd! CmdwinLeave * :call MapCR()
+augroup END
