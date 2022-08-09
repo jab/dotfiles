@@ -89,8 +89,4 @@ function add_abbrevs
   if type -q btm
     abbr -a -- top btm
   end
-
-  if type -q br
-    abbr -a -- tree 'br -s'
-  end
 end
