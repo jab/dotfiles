@@ -33,8 +33,9 @@
     chezmoi
     tailscale
     lsd
-    procs
+    tree
     file
+    procs
     rm-improved
     moreutils
     ripgrep
