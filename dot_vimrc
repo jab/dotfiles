@@ -52,7 +52,7 @@ set ttyfast
 set visualbell
 
 set gdefault  " turn the :substitute flag 'g' on by default
-setlocal spell
+set spell
 
 set termguicolors
 set background=dark
@@ -125,7 +125,8 @@ vnoremap <leader>ib :!align<cr>
 
 map <leader>y "*y
 
-nnoremap <leader>s :syntax sync fromstart<cr>
+nnoremap <leader>s :set spell!<cr>
+nnoremap <leader>S :syntax sync fromstart<cr>
 
 " Switch to alternate file
 nnoremap <leader><leader> <c-^>
