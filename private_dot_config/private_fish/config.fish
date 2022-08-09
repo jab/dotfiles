@@ -56,6 +56,7 @@ function add_abbrevs
 
   if type -q chezmoi  # https://chezmoi.io
     abbr -a -- ch chezmoi
+    abbr -a -- che chezmoi edit
   end
 
   if type -q rip  # https://github.com/nivekuil/rip
