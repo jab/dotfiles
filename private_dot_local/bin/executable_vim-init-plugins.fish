@@ -3,7 +3,7 @@
 set install_dir "$HOME/.vim/pack/plugins/start"
 mkdir -p $install_dir
 
-set plugin_urls "https://github.com/sheerun/vim-polyglot" "https://github.com/tpope/vim-eunuch"
+set plugin_urls "https://github.com/sheerun/vim-polyglot" "https://github.com/tpope/vim-eunuch" "https://github.com/jeffkreeftmeijer/vim-dim"
 for url in $plugin_urls
   set name (basename $url)
   set target_dir $install_dir/$name
