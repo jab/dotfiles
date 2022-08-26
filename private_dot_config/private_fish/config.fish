@@ -10,9 +10,8 @@ if status is-interactive
     end
   end
 
-  if test -d ~/.local/bin
-    fish_add_path ~/.local/bin
-  end
+  # https://github.com/LnL7/nix-darwin/issues/122
+  fish_add_path --path --move $HOME/.local/bin $HOME/.nix-profile/bin /run/wrappers/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 
   if test -f ~/.local/google-cloud-sdk/path.fish.inc
     source ~/.local/google-cloud-sdk/path.fish.inc
@@ -51,7 +50,8 @@ function add_abbrevs
   abbr -a -- gco 'git checkout'
 
   if type -q lsd  # https://github.com/Peltoche/lsd
-    abbr -a -- l 'lsd -la'
+    abbr -a -- l 'lsd -lha'
+    abbr -a -- ll 'lsd -lha'
   end
 
   if type -q chezmoi  # https://chezmoi.io
