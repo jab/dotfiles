@@ -29,29 +29,34 @@
   time.timeZone = "America/New_York";
 
   environment.systemPackages = with pkgs; [
-    nix-index
-    chezmoi
-    tailscale
-    lsd
-    tree
-    file
-    procs
-    rm-improved
-    moreutils
-    ripgrep
-    fd
-    plocate
-    duf
-    ncdu_2
-    gping
-    sd
     bottom
     broot
-    git
+    chezmoi
     docker
-    fish
-    starship
+    duf
     emacs
+    fd
+    file
+    fish
+    fq
+    fzf
+    git
+    gping
+    jc
+    jq
+    lsd
+    moreutils
+    ncdu_2
+    nix-index
+    plocate
+    procs
+    ripgrep
+    rm-improved
+    sd
+    starship
+    tailscale
+    tmux
+    tree
     vim
   ];
 
