@@ -102,8 +102,7 @@ endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
 
-nnoremap <leader>p :set paste<cr>
-nnoremap <leader>P :set nopaste<cr>
+nnoremap <leader>p :set paste!<cr>
 nnoremap ; :
 inoremap jj <ESC>
 " Move around splits with <c-hjkl>
@@ -158,8 +157,6 @@ augroup vimrcEx
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
-  autocmd FileType python set sw=4 sts=4 et
 
   " Leave the return key alone when in command line windows, since it's used to run commands there.
   autocmd! CmdwinEnter * :unmap <cr>
