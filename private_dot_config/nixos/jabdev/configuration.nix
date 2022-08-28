@@ -32,32 +32,57 @@
     bottom
     broot
     chezmoi
+    choose
     docker
     duf
     emacs
+    fcp
     fd
     file
     fish
     fq
     fzf
+    gh
     git
+    git-extras
     gping
+    grc
+    grex
     jc
+    jless
     jq
+    lnav
     lsd
+    mkcert
     moreutils
+    mtr
+    navi
     ncdu_2
     nix-index
     plocate
     procs
+    procs
+    pv
+    pwgen
+    rename
     ripgrep
     rm-improved
+    scc
     sd
+    shellcheck
+    socat
     starship
     tailscale
     tmux
     tree
+    tz
+    ugrep
+    up
     vim
+    xh
+    yamllint
+    yank
+    zoxide
   ];
 
   programs.fish.enable = true;
