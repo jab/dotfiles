@@ -7,26 +7,53 @@
     bottom
     broot
     chezmoi
+    choose
     duf
+    fcp
     fd
     file
     fish
     fq
     fzf
+    gh
     git
+    git-extras
     gping
+    grc
+    grex
     jc
+    jless
     jq
+    lnav
     lsd
+    mkcert
     moreutils
+    mtr
+    navi
     ncdu_2
     nerdfonts
+    nnn
+    pv
+    pwgen
+    rename
     ripgrep
     rm-improved
+    scc
     sd
+    shellcheck
+    socat
     starship
     tree
+    tz
+    ugrep
+    up
     vim
+    websocat
+    xh
+    yamllint
+    yank
+    youtube-dl
+    zoxide
   ];
 
   # Use a custom configuration.nix location.

@@ -20,6 +20,10 @@ if status is-interactive
   if type -q starship  # https://starship.rs
     starship init fish | source
   end
+
+  if type -q zoxide
+    zoxide init fish | source
+  end
 end
 
 function mcd -a dir
@@ -52,6 +56,10 @@ function add_abbrevs
   if type -q lsd  # https://github.com/Peltoche/lsd
     abbr -a -- l 'lsd -lha'
     abbr -a -- ll 'lsd -lha'
+  end
+
+  if type -q nnn  # https://github.com/jarun/nnn
+    abbr -a -- n 'nnn'
   end
 
   if type -q chezmoi  # https://chezmoi.io
