@@ -55,8 +55,7 @@ set gdefault  " turn the :substitute flag 'g' on by default
 set spell
 
 set background=dark
-" https://jeffkreeftmeijer.com/vim-16-color/
-colorscheme dim
+silent! colorscheme dim  " https://jeffkreeftmeijer.com/vim-16-color/
 
 " line length
 highlight ColorColumn ctermbg=gray guibg=gray
