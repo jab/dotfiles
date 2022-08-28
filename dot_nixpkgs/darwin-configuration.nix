@@ -18,6 +18,7 @@
     gh
     git
     git-extras
+    google-cloud-sdk
     gping
     grc
     grex
