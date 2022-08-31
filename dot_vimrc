@@ -57,6 +57,8 @@ set spell
 set background=dark
 silent! colorscheme dim  " https://jeffkreeftmeijer.com/vim-16-color/
 
+let g:airline_powerline_fonts = 1  " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
+
 " line length
 highlight ColorColumn ctermbg=gray guibg=gray
 set colorcolumn=100
