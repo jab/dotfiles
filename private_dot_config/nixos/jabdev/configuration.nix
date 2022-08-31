@@ -59,8 +59,8 @@
     navi
     ncdu_2
     nix-index
+    nnn
     plocate
-    procs
     procs
     pv
     pwgen
