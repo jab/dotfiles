@@ -64,8 +64,10 @@
     procs
     pv
     pwgen
+    python3Full
     rename
     ripgrep
+    rlwrap
     rm-improved
     scc
     sd
