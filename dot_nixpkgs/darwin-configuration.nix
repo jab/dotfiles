@@ -33,8 +33,8 @@
     mtr
     navi
     ncdu_2
-    nerdfonts
     nnn
+    # operator-mono-lig  # pending https://github.com/NixOS/nixpkgs/issues/191827
     pv
     pwgen
     python3Full
