@@ -19,6 +19,7 @@
     git
     git-extras
     google-cloud-sdk
+    gojq
     gping
     grc
     grex

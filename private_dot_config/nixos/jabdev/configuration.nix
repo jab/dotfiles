@@ -45,6 +45,7 @@
     gh
     git
     git-extras
+    gojq
     gping
     grc
     grex
