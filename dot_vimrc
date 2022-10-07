@@ -126,6 +126,7 @@ vnoremap <leader>ib :!align<cr>
 
 map <leader>y "*y
 
+nnoremap <leader>l :set list!<cr>
 nnoremap <leader>s :set spell!<cr>
 nnoremap <leader>S :syntax sync fromstart<cr>
 
