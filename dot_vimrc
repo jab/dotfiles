@@ -52,7 +52,6 @@ set ttyfast
 set visualbell
 
 set gdefault  " turn the :substitute flag 'g' on by default
-set spell
 
 set background=dark
 silent! colorscheme dim  " https://jeffkreeftmeijer.com/vim-16-color/
@@ -103,6 +102,9 @@ endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
 
+" Disable default binding for K to find-manpage
+map K <Nop>
+
 nnoremap <leader>p :set paste!<cr>
 nnoremap ; :
 inoremap jj <ESC>
@@ -125,6 +127,7 @@ nnoremap <leader>v V`]
 vnoremap <leader>ib :!align<cr>
 
 map <leader>y "*y
+map <leader>d "*d
 
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>s :set spell!<cr>
@@ -147,7 +150,7 @@ cnoremap <expr> %% expand('%:h').'/'
 " Open files in directory of current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
-map <leader>v :view %%
+map <leader>V :view %%
 
 " Custom autocmds
 augroup vimrcEx
