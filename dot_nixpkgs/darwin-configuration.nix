@@ -36,7 +36,7 @@
     # operator-mono-lig  # pending https://github.com/NixOS/nixpkgs/issues/191827
     pv
     pwgen
-    python3Full
+    python311
     rename
     ripgrep
     rlwrap
@@ -68,7 +68,6 @@
   nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
   programs.fish.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
