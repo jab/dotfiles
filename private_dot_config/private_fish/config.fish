@@ -9,10 +9,6 @@ if status is-interactive
     end
   end
 
-  if test -f ~/.local/google-cloud-sdk/path.fish.inc
-    source ~/.local/google-cloud-sdk/path.fish.inc
-  end
-
   if type -q starship  # https://starship.rs
     starship init fish | source
   end
