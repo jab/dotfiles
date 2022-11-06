@@ -9,9 +9,6 @@ if status is-interactive
     end
   end
 
-  # https://github.com/LnL7/nix-darwin/issues/122
-  fish_add_path --path --move $HOME/.local/bin $HOME/.nix-profile/bin /run/wrappers/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
-
   if test -f ~/.local/google-cloud-sdk/path.fish.inc
     source ~/.local/google-cloud-sdk/path.fish.inc
   end
