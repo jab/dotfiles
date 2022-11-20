@@ -1,15 +1,17 @@
 #!/usr/bin/env fish
 
 set install_dir "$HOME/.vim/pack/plugins/start"
-mkdir -p $install_dir
+mkdir -pv $install_dir
 
 set plugin_urls \
+  "https://github.com/editorconfig/editorconfig-vim" \
+  "https://github.com/jeffkreeftmeijer/vim-dim" \
   "https://github.com/sheerun/vim-polyglot" \
   "https://github.com/tpope/vim-eunuch" \
-  "https://github.com/jeffkreeftmeijer/vim-dim" \
-  "https://github.com/vim-airline/vim-airline" \
   "https://github.com/tpope/vim-sleuth" \
-  "https://github.com/editorconfig/editorconfig-vim"
+  "https://github.com/tpope/vim-unimpaired.git" \
+  "https://github.com/vim-airline/vim-airline" \
+
 
 for url in $plugin_urls
   set name (basename $url)

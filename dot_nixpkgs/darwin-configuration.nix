@@ -67,10 +67,8 @@
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
   programs.fish.enable = true;
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
+  # Used for backwards compatibility. Run `darwin-rebuild changelog` before changing.
   system.stateVersion = 4;
 }
