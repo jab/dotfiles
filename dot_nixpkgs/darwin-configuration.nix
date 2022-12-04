@@ -34,6 +34,7 @@
     ncdu_2
     nnn
     # operator-mono-lig  # pending https://github.com/NixOS/nixpkgs/issues/191827
+    nodejs
     pv
     pwgen
     python311
