@@ -1,4 +1,4 @@
-if not set -q MY_ABBR_SET
+if not set -U -q MY_ABBR_SET
   set -U MY_ABBR_SET '1'
 
   abbr -a -- - 'cd -'
@@ -32,6 +32,7 @@ if not set -q MY_ABBR_SET
   abbr -a -- gcb 'git checkout -b'
   abbr -a -- gbr 'git branch'
   abbr -a -- gbd 'git branch -d'
+  abbr -a -- gbl 'git branch -l'
   abbr -a -- gdi 'git diff'
   abbr -a -- gds 'git diff --staged'
   abbr -a -- gad 'git add'
@@ -39,6 +40,7 @@ if not set -q MY_ABBR_SET
   abbr -a -- gci 'git commit'
   abbr -a -- gcm 'git commit -m'
   abbr -a -- gps 'git push'
+  abbr -a -- gpf 'git push -f'
   abbr -a -- grs 'git restore'
   abbr -a -- grss 'git restore --staged'
   abbr -a -- grsa 'git restore --staged . && git restore .'
