@@ -13,6 +13,10 @@ if status is-interactive
     starship init fish | source
   end
 
+  if type -q direnv  # https://direnv.net
+    direnv hook fish | source
+  end
+
   if type -q zoxide
     zoxide init fish | source
   end

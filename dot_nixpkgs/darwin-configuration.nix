@@ -8,6 +8,7 @@
     broot
     chezmoi
     choose
+    direnv
     duf
     fcp
     fd

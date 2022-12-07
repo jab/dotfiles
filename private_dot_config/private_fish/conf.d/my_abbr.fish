@@ -7,7 +7,7 @@ if not set -U -q MY_ABBR_SET
 
   abbr -a -- cp 'cp -iv'
   abbr -a -- mv 'mv -iv'
-  abbr -a -- rm 'rm -iv'
+  abbr -a -- rmi 'rm -iv'
   abbr -a -- rmr 'rm -rf'
   abbr -a -- r 'rip'
 
