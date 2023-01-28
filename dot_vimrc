@@ -49,17 +49,17 @@ set encoding=utf-8
 set ruler
 set showmode
 set ttyfast
-set visualbell
+set novisualbell
 
 set gdefault  " turn the :substitute flag 'g' on by default
 
 set background=dark
 silent! colorscheme dim  " https://jeffkreeftmeijer.com/vim-16-color/
 
-let g:airline_powerline_fonts = 1  " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
+let g:airline_powerline_fonts=1  " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
 
 " line length
-highlight ColorColumn ctermbg=gray guibg=gray
+highlight ColorColumn ctermbg=DarkGray guibg=DarkGray
 set colorcolumn=100
 set textwidth=100
 set wrap
@@ -67,7 +67,7 @@ set formatoptions=qrn1
 
 " show invisible characters:
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ 
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight ExtraWhitespace ctermbg=red guibg=red

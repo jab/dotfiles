@@ -7,9 +7,10 @@ set plugin_urls \
   "https://github.com/editorconfig/editorconfig-vim" \
   "https://github.com/jeffkreeftmeijer/vim-dim" \
   "https://github.com/sheerun/vim-polyglot" \
+  "https://github.com/tpope/vim-commentary" \
   "https://github.com/tpope/vim-eunuch" \
   "https://github.com/tpope/vim-sleuth" \
-  "https://github.com/tpope/vim-unimpaired.git" \
+  "https://github.com/tpope/vim-unimpaired" \
   "https://github.com/vim-airline/vim-airline" \
 
 

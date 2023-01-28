@@ -4,6 +4,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    bat
     bottom
     broot
     chezmoi
@@ -34,11 +35,11 @@
     navi
     ncdu_2
     nnn
-    # operator-mono-lig  # pending https://github.com/NixOS/nixpkgs/issues/191827
     nodejs
     pv
     pwgen
-    python311
+    python3
+    python310Packages.pipx
     rename
     ripgrep
     rlwrap
@@ -53,6 +54,7 @@
     ugrep
     up
     vim
+    visidata
     websocat
     xh
     yamllint
