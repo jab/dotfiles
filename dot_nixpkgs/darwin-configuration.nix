@@ -4,74 +4,82 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    bat
-    bottom
-    broot
     chezmoi
-    choose
     direnv
-    duf
-    fcp
-    fd
+    exa
     file
     fish
-    fq
-    fzf
     gh
-    git
-    git-extras
-    gojq
-    gping
-    grc
-    grex
-    jc
-    jless
-    jq
-    lnav
-    lsd
-    mkcert
-    moreutils
-    mtr
-    navi
-    ncdu_2
-    nnn
-    nodejs
-    pv
     pwgen
-    python3
-    python310Packages.pipx
-    rename
     ripgrep
     rlwrap
     rm-improved
-    scc
-    sd
-    shellcheck
-    socat
     starship
     tree
-    tz
-    ugrep
-    up
-    vim
-    visidata
-    websocat
-    xh
-    yamllint
-    yank
-    youtube-dl
-    zoxide
+    # bat
+    # bottom
+    # broot
+    # choose
+    # duf
+    # fcp
+    # fd
+    # fq
+    # fzf
+    # git
+    # git-extras
+    # gojq
+    # gping
+    # grc
+    # grex
+    # jc
+    # jless
+    # jq
+    # lnav
+    # mkcert
+    # moreutils
+    # mtr
+    # navi
+    # ncdu_2
+    # nnn
+    # pv
+    # rename
+    # scc
+    # sd
+    # shellcheck
+    # socat
+    # tz
+    # ugrep
+    # up
+    # vim
+    # visidata
+    # websocat
+    # xh
+    # yamllint
+    # yank
+    # youtube-dl
+    # zoxide
   ];
-
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
   programs.fish.enable = true;
+
+  homebrew.enable = true;
+  homebrew.casks = [
+    "authy"
+    "bitwarden"
+    "iterm2"
+    "maccy"
+    "rectangle-pro"
+    "visual-studio-code"
+  ];
+
+  fonts.fontDir.enable = true;
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
 
   # Used for backwards compatibility. Run `darwin-rebuild changelog` before changing.
   system.stateVersion = 4;
