@@ -17,7 +17,7 @@ set plugin_urls \
 for url in $plugin_urls
   set name (basename $url)
   set target_dir $install_dir/$name
-  echo "Plugin: $name"
+  echo "Plugin: $name ($target_dir)"
   if test -d $target_dir/.git
     git -C $target_dir pull
   else
