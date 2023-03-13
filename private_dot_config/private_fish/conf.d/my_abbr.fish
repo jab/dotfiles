@@ -23,6 +23,7 @@ end
 
 abbr -a -- g 'git'
 abbr -a -- glg 'git log'
+abbr -a -- glp 'git log -p'
 abbr -a -- gst 'git status'
 abbr -a -- gpl 'git pull'
 abbr -a -- gsw 'git switch'
