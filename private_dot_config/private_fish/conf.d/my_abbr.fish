@@ -1,5 +1,3 @@
-abbr -a -- pppath 'echo $PATH | tr " " \\n | nl'
-
 abbr -a -- - 'cd -'
 abbr -a -- c 'command'
 abbr -a -- t 'type'
@@ -20,6 +18,8 @@ else
   abbr -a -- l 'ls -lha'
   abbr -a -- ll 'ls -lha'
 end
+
+abbr -a -- ppath 'echo $PATH | tr " " \\n | nl'
 
 abbr -a -- g 'git'
 abbr -a -- glg 'git log'
@@ -49,12 +49,8 @@ if type -q chezmoi
   abbr -a -- ch 'chezmoi'
   abbr -a -- che 'chezmoi edit --apply'
   abbr -a -- chs 'chezmoi status'
-  abbr -a -- chd 'chezmoi diff'
   abbr -a -- chc 'chezmoi cd'
-end
-
-if type -q nnn
-  abbr -a -- n 'nnn'
+  abbr -a -- chdi 'chezmoi diff'
 end
 
 # echo "Added" (abbr -l | wc -l | tr -d ' ') "abbreviations"

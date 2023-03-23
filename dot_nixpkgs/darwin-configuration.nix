@@ -70,10 +70,12 @@
   homebrew.casks = [
     "authy"
     "bitwarden"
+    "firefox"
     "iterm2"
     "maccy"
     "rectangle-pro"
     "visual-studio-code"
+    "vlc"
   ];
 
   fonts.fontDir.enable = true;
