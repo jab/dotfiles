@@ -16,6 +16,7 @@
     rm-improved
     starship
     tree
+    vim
     # bat
     # bottom
     # broot
@@ -50,7 +51,6 @@
     # tz
     # ugrep
     # up
-    # vim
     # visidata
     # websocat
     # xh

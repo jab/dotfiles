@@ -6,7 +6,6 @@ abbr -a -- cp 'cp -iv'
 abbr -a -- mv 'mv -iv'
 abbr -a -- rmi 'rm -iv'
 abbr -a -- rmr 'rm -rf'
-abbr -a -- r 'rip'
 
 abbr -a -- e 'echo'
 abbr -a -- v 'vim'
@@ -14,9 +13,11 @@ abbr -a -- v 'vim'
 if type -q exa
   abbr -a -- l 'exa -lhag'
   abbr -a -- ll 'exa -lhag'
+  abbr -a -- lld 'exa -lhagd'
 else
   abbr -a -- l 'ls -lha'
   abbr -a -- ll 'ls -lha'
+  abbr -a -- lld 'ls -lhad'
 end
 
 abbr -a -- ppath 'echo $PATH | tr " " \\n | nl'
@@ -24,6 +25,7 @@ abbr -a -- ppath 'echo $PATH | tr " " \\n | nl'
 abbr -a -- g 'git'
 abbr -a -- glg 'git log'
 abbr -a -- glp 'git log -p'
+abbr -a -- gln 'git log --name-status'
 abbr -a -- gst 'git status'
 abbr -a -- gpl 'git pull'
 abbr -a -- gsw 'git switch'
@@ -44,6 +46,8 @@ abbr -a -- gpf 'git push -f'
 abbr -a -- grs 'git restore'
 abbr -a -- grss 'git restore --staged'
 abbr -a -- grsa 'git restore --staged . && git restore .'
+abbr -a -- gprv 'git checkout HEAD^'
+abbr -a -- gnxt 'git checkout (git rev-list HEAD..demo-end | tail -1)'
 
 if type -q chezmoi
   abbr -a -- ch 'chezmoi'
@@ -65,7 +69,5 @@ function abbr_erase_all --description 'Erase all abbrs'
         return 1
     end
   end
-  for abbr_name in (abbr -l)
-    abbr -e $abbr_name
-  end
+  abbr --erase (abbr --list)
 end
