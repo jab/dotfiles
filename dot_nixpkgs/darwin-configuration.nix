@@ -74,6 +74,7 @@
     "iterm2"
     "maccy"
     "rectangle-pro"
+    "scroll-reverser"
     "visual-studio-code"
     "vlc"
   ];
