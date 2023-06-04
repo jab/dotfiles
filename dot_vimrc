@@ -54,7 +54,10 @@ set novisualbell
 set gdefault  " turn the :substitute flag 'g' on by default
 
 set background=dark
+set termguicolors
 silent! colorscheme lunaperche
+silent! colorscheme catppuccin_mocha
+let g:airline_theme = 'catppuccin_mocha'
 
 let g:airline_powerline_fonts=1  " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
 

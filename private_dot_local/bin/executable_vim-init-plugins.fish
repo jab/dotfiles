@@ -4,6 +4,7 @@ set install_dir "$HOME/.vim/pack/plugins/start"
 mkdir -pv $install_dir
 
 set plugin_urls \
+  "https://github.com/catppuccin/vim" \
   "https://github.com/editorconfig/editorconfig-vim" \
   "https://github.com/sheerun/vim-polyglot" \
   "https://github.com/tpope/vim-commentary" \
