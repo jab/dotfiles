@@ -10,10 +10,10 @@ abbr -a -- rmr 'rm -rf'
 abbr -a -- e 'echo'
 abbr -a -- v 'vim'
 
-if type -q exa
-  abbr -a -- l 'exa -lhag'
-  abbr -a -- ll 'exa -lhag'
-  abbr -a -- lld 'exa -lhagd'
+if type -q eza
+  abbr -a -- l 'eza -lhag'
+  abbr -a -- ll 'eza -lhag'
+  abbr -a -- lld 'eza -lhagd'
 else
   abbr -a -- l 'ls -lha'
   abbr -a -- ll 'ls -lha'

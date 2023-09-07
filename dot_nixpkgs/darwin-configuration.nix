@@ -8,7 +8,7 @@
     bottom
     chezmoi
     direnv
-    exa
+    eza
     fd
     file
     fish
@@ -79,6 +79,7 @@
 
   homebrew.enable = true;
   homebrew.casks = [
+    "appcleaner"
     "authy"
     "bitwarden"
     "discord"
