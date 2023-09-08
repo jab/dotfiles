@@ -99,4 +99,10 @@
 
   # Used for backwards compatibility. Run `darwin-rebuild changelog` before changing.
   system.stateVersion = 4;
+
+  # Based on https://github.com/DeterminateSystems/nix-installer
+  nix.extraOptions = "
+build-users-group = nixbld
+experimental-features = nix-command flakes
+auto-optimise-store = true";
 }
