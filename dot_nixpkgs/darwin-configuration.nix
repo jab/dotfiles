@@ -7,6 +7,7 @@
     bat
     bottom
     chezmoi
+    delta
     direnv
     eza
     fd
@@ -19,6 +20,7 @@
     ripgrep
     rlwrap
     rm-improved
+    sd
     starship
     tree
     vim
@@ -46,7 +48,6 @@
     # pv
     # rename
     # scc
-    # sd
     # shellcheck
     # socat
     # tz
@@ -85,9 +86,11 @@
     "discord"
     "firefox"
     "iterm2"
+    "qmk-toolbox"
     "maccy"
     "rectangle-pro"
     "scroll-reverser"
+    "via"
     "visual-studio-code"
     "vlc"
   ];
@@ -95,6 +98,8 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    cm_unicode
+    meslo-lgs-nf
   ];
 
   # Used for backwards compatibility. Run `darwin-rebuild changelog` before changing.
