@@ -51,10 +51,11 @@ abbr -a -- gnxt 'git checkout (git rev-list HEAD..demo-end | tail -1)'
 
 if type -q chezmoi
   abbr -a -- ch 'chezmoi'
+  abbr -a -- cha 'chezmoi add'
   abbr -a -- che 'chezmoi edit --apply'
   abbr -a -- chs 'chezmoi status'
   abbr -a -- chc 'chezmoi cd'
-  abbr -a -- chdi 'chezmoi diff'
+  abbr -a -- chd 'chezmoi diff'
 end
 
 # echo "Added" (abbr -l | wc -l | tr -d ' ') "abbreviations"
