@@ -17,6 +17,7 @@
     fzf
     gh
     pwgen
+    python311Packages.ipython
     ripgrep
     rlwrap
     rm-improved
