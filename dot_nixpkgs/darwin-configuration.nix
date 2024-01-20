@@ -16,6 +16,8 @@
     fishPlugins.forgit
     fzf
     gh
+    neovim
+    pre-commit
     pwgen
     python311Packages.ipython
     ripgrep

@@ -1,5 +1,6 @@
 [init]
 defaultBranch = main
+templateDir = ~/.git-template
 
 [commit]
 # https://git-scm.com/docs/git-config#Documentation/git-config.txt-commitverbose
@@ -10,10 +11,14 @@ verbose = true
 pager = delta
 
 [interactive]
-diffFilter = delta --color-only
+diffFilter = delta --features=interactive
 
 [delta]
+dark = true
 navigate = true
+paging = always
+side-by-side = true
+syntax-theme = Sublime Snazzy
 
 [merge]
 conflictstyle = diff3
