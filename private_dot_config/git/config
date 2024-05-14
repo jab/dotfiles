@@ -1,17 +1,33 @@
+# vim: set ft=confini:
+
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+# https://www.youtube.com/watch?v=aolI_Rz0ZqY
+
 [init]
 defaultBranch = main
 templateDir = ~/.git-template
 
+[help]
+# autocorrect = 5
+autocorrect = prompt
+
+[log]
+date = iso
+
 [commit]
 # https://git-scm.com/docs/git-config#Documentation/git-config.txt-commitverbose
 verbose = true
+
+[column]
+ui = auto
 
 # https://github.com/dandavison/delta#get-started
 [core]
 pager = delta
 
 [interactive]
-diffFilter = delta --features=interactive
+# diffFilter = delta --features=interactive
+diffFilter = delta --color-only
 
 [delta]
 dark = true
@@ -21,29 +37,80 @@ side-by-side = true
 syntax-theme = Sublime Snazzy
 
 [merge]
-conflictstyle = diff3
+# https://ductile.systems/zdiff3/
+conflictstyle = zdiff3
+keepbackup = false
 
 [diff]
+# https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+algorithm = histogram
 colorMoved = default
+colorMovedWS = allow-indentation-change
+context = 10
 # https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffsubmodule
 submodule = diff
+# Maybe try https://github.com/Wilfred/difftastic with the following:
+# tool = difftastic
 
 [pager]
 # https://git-scm.com/docs/git-config#Documentation/git-config.txt-pagerltcmdgt
 branch = false
 
-[push]
-# https://git-scm.com/docs/git-push#_examples
-default = current
+[pull]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullff
+ff = only
 
+[push]
+# https://git-scm.com/docs/git-push#Documentation/git-push.txt-pushautoSetupRemote
+autoSetupRemote = true
+followtags = true
+
+[rebase]
+autosquash = true
+autostash = true
+missingCommitsCheck = error
+# https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+updateRefs = true
+
+[rerere]
+enabled = true
+
+[status]
+submoduleSummary = true
+
+[submodule]
+recurse = true
+
+[fetch]
+prune = true
+pruntags = true
+fsckObjects = true
+[receive]
+fsckObjects = true
 [transfer]
-# https://git-scm.com/docs/git-config#Documentation/git-config.txt-transferfsckObjects
 fsckObjects = true
 
 [credential]
 # https://git-scm.com/docs/gitcredentials#Documentation/gitcredentials.txt-cache
 helper = cache --timeout=99999  # ~1 day
 
+[url "https://github.com/"]
+insteadOf = "gh:"
+
+#[blame]
+#ignoreRevsFile = .git-blame-ignore-revs
+
+[branch]
+sort = -committerdate
+[tag]
+sort = -taggerdate
+
 [user]
-email = jabronson@gmail.com
 name = Joshua Bronson
+email = jabronson@gmail.com
+
+[includeIf "gitdir:~/ctc/"]
+path = ~/.config/git/config-ctc
+
+[alias]
+bb = !~/.config/git/better-branch.sh

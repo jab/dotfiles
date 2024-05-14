@@ -1,5 +1,5 @@
 if status is-interactive
-  set -gx EDITOR vim
+  set -gx EDITOR nvim
   set -gx LESS -iR
 
   set -gx PIP_REQUIRE_VIRTUALENV true
@@ -21,5 +21,9 @@ if status is-interactive
     zoxide init fish | source
   end
 
-  fish_add_path --move --prepend --path "$HOME/.local/bin"
+  if type -q thefuck
+    thefuck --alias=f | source
+  end
+
+  fish_add_path --move --prepend --path "$HOME/.local/bin" "$HOME/.cargo/bin"
 end

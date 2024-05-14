@@ -5,38 +5,52 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     bat
-    bottom
+    bazel-buildtools
+    bazel-watcher
+    bazelisk
+    btop
     chezmoi
     delta
     direnv
+    dua
+    duf
     eza
+    fblog
     fd
     file
     fish
-    fishPlugins.forgit
     fzf
     gh
+    git
     neovim
+    nix-inspect
     pre-commit
     pwgen
-    python311Packages.ipython
+    python312
     ripgrep
     rlwrap
     rm-improved
     sd
+    starlark
     starship
+    thefuck
     tree
+    uv
     vim
+    zoxide
+    # autoclave
+    # bottom
     # broot
     # choose
-    # duf
+    # diffoscope
     # fcp
     # fq
-    # git
+    # fishPlugins.forgit
     # git-extras
     # gojq
     # gping
     # grc
+    # gron
     # grex
     # jc
     # jless
@@ -48,8 +62,10 @@
     # navi
     # ncdu_2
     # nnn
+    # perl538Packages.strip-nondeterminism
     # pv
     # rename
+    # ripgrep-all
     # scc
     # shellcheck
     # socat
@@ -62,7 +78,6 @@
     # yamllint
     # yank
     # youtube-dl
-    # zoxide
   ];
 
   # Auto upgrade nix package and the daemon service.
@@ -89,8 +104,10 @@
     "discord"
     "firefox"
     "iterm2"
-    "qmk-toolbox"
     "maccy"
+    "obsidian"
+    "qlmarkdown"
+    "qmk-toolbox"
     "rectangle-pro"
     "scroll-reverser"
     "via"

@@ -5,6 +5,7 @@ set history=10000  " remember more commands and search history
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set shiftround
 set softtabstop=2
 set autoindent
 set laststatus=2
