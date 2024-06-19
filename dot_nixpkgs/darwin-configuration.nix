@@ -26,7 +26,6 @@
     nix-inspect
     pre-commit
     pwgen
-    python312
     ripgrep
     rlwrap
     rm-improved
@@ -115,8 +114,7 @@
     "vlc"
   ];
 
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     cm_unicode
     meslo-lgs-nf
