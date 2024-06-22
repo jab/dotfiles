@@ -19,6 +19,7 @@ with pkgs; [
     git
     neovim
     nvimpager
+    podman
     pre-commit
     pwgen
     ripgrep
@@ -28,6 +29,7 @@ with pkgs; [
     starlark
     starship
     thefuck
+    tmux
     tree
     uv
     zoxide
