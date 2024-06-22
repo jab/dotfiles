@@ -1,12 +1,17 @@
 if status is-interactive
-  set -gx EDITOR nvim
   set -gx LESS -iR
-
   set -gx PIP_REQUIRE_VIRTUALENV true
-  if type -q python3
-    if test -f ~/.local/pythonstartup.py &>/dev/null
-      set -gx PYTHONSTARTUP ~/.local/pythonstartup.py
-    end
+
+  fish_add_path --move --prepend --path \
+    "$HOME/.local/bin" \
+    "$HOME/.cargo/bin" \
+
+  if type -q nvim
+    set -gx EDITOR nvim
+  end
+
+  if type -q nvimpager
+    set -gx PAGER nvimpager
   end
 
   if type -q starship  # https://starship.rs
@@ -17,13 +22,15 @@ if status is-interactive
     direnv hook fish | source
   end
 
-  if type -q zoxide
+  if type -q zoxide  # https://github.com/ajeetdsouza/zoxide
     zoxide init fish | source
   end
 
-  if type -q thefuck
+  if type -q thefuck  # https://github.com/nvbn/thefuck
     thefuck --alias=f | source
   end
 
-  fish_add_path --move --prepend --path "$HOME/.local/bin" "$HOME/.cargo/bin"
+  if test -f ~/.local/pythonstartup.py &>/dev/null
+    set -gx PYTHONSTARTUP ~/.local/pythonstartup.py
+  end
 end
