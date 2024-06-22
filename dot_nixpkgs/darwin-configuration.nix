@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = import ./syspkgs.nix { inherit pkgs; };
+  environment.systemPackages = import ./mysyspkgs.nix { inherit pkgs; };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;

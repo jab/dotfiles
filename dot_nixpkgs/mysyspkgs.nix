@@ -18,7 +18,6 @@ with pkgs; [
     gh
     git
     neovim
-    nix-inspect
     nvimpager
     pre-commit
     pwgen
@@ -31,7 +30,6 @@ with pkgs; [
     thefuck
     tree
     uv
-    vim
     zoxide
     # autoclave
     # bottom
@@ -56,6 +54,7 @@ with pkgs; [
     # mtr
     # navi
     # ncdu_2
+    # nix-inspect
     # nnn
     # perl538Packages.strip-nondeterminism
     # pv
@@ -67,6 +66,7 @@ with pkgs; [
     # tz
     # ugrep
     # up
+    # vim
     # visidata
     # websocat
     # xh
