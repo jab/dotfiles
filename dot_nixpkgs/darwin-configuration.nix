@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = import ./mysyspkgs.nix { inherit pkgs; };
@@ -12,10 +17,13 @@
   # https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
   programs.fish.loginShellInit =
     let
-      dquote = str: "\"" + (builtins.replaceStrings ["\""] ["\"'\"'\""] str) + "\"";
+      dquote = str: "\"" + (builtins.replaceStrings [ "\"" ] [ "\"'\"'\"" ] str) + "\"";
       makeBinPathList = paths: map (path: path + "/bin") (builtins.filter (x: x != null) paths);
-    in ''
-      fish_add_path --move --prepend --path ${lib.concatMapStringsSep " " dquote (makeBinPathList config.environment.profiles)}
+    in
+    ''
+      fish_add_path --move --prepend --path ${
+        lib.concatMapStringsSep " " dquote (makeBinPathList config.environment.profiles)
+      }
       set fish_user_paths $fish_user_paths
     '';
 
