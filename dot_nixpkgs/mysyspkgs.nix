@@ -18,9 +18,9 @@ with pkgs; [
     gh
     git
     neovim
+    nixfmt-rfc-style
     nvimpager
     podman
-    pre-commit
     pwgen
     ripgrep
     rlwrap
@@ -31,7 +31,6 @@ with pkgs; [
     thefuck
     tmux
     tree
-    uv
     zoxide
     # autoclave
     # bottom
