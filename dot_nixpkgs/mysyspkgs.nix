@@ -29,7 +29,6 @@ with pkgs;
   rm-improved
   sd
   starlark
-  starship
   thefuck
   tmux
   tree

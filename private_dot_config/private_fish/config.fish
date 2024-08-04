@@ -14,10 +14,6 @@ if status is-interactive
     set -gx PAGER nvimpager
   end
 
-  if type -q starship  # https://starship.rs
-    starship init fish | source
-  end
-
   if type -q direnv  # https://direnv.net
     direnv hook fish | source
   end

@@ -1,3 +1,0 @@
-[python]
-# work around https://github.com/starship/starship/issues/6046
-detect_extensions = []
