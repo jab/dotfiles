@@ -1,18 +1,21 @@
+function _set_to_first_on_path -a env_var -a candidates
+  for exe in (string split ' ' $candidates)
+    if type -q $exe
+      set -gx $env_var $exe
+      break
+    end
+  end
+end
+
 if status is-interactive
   set -gx LESS -iR
-  set -gx PIP_REQUIRE_VIRTUALENV true
+  # set -gx PIP_REQUIRE_VIRTUALENV true
 
   fish_add_path --move --prepend --path \
     "$HOME/.local/bin" \
-    "$HOME/.cargo/bin" \
 
-  if type -q nvim
-    set -gx EDITOR nvim
-  end
-
-  if type -q nvimpager
-    set -gx PAGER nvimpager
-  end
+  _set_to_first_on_path EDITOR "nvim vim"
+  _set_to_first_on_path PAGER "nvimpager vimpager"
 
   if type -q direnv  # https://direnv.net
     direnv hook fish | source

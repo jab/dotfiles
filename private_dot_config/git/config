@@ -22,12 +22,12 @@ verbose = true
 ui = auto
 
 # https://github.com/dandavison/delta#get-started
-[core]
-pager = delta
+# [core]
+# pager = delta
 
-[interactive]
-# diffFilter = delta --features=interactive
-diffFilter = delta --color-only
+# [interactive]
+# # diffFilter = delta --features=interactive
+# diffFilter = delta --color-only
 
 [delta]
 dark = true
@@ -109,7 +109,7 @@ sort = -taggerdate
 name = Joshua Bronson
 email = jabronson@gmail.com
 
-[includeIf "gitdir:~/ctc/"]
+[includeIf "gitdir:~/src/ctc/"]
 path = ~/.config/git/config-ctc
 
 [alias]
