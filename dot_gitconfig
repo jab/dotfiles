@@ -1,0 +1,90 @@
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+# https://www.youtube.com/watch?v=aolI_Rz0ZqY
+
+[init]
+defaultBranch = main
+# templateDir = ~/.git-template
+
+[help]
+# autocorrect = 5
+autocorrect = prompt
+
+[log]
+date = iso
+
+[commit]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-commitverbose
+verbose = true
+
+[column]
+ui = auto
+
+[merge]
+# https://ductile.systems/zdiff3/
+conflictstyle = zdiff3
+keepbackup = false
+
+[diff]
+# https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+algorithm = histogram
+colorMoved = default
+colorMovedWS = allow-indentation-change
+context = 10
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffsubmodule
+submodule = diff
+
+[pager]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pagerltcmdgt
+branch = false
+
+[pull]
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullff
+ff = only
+
+[push]
+# https://git-scm.com/docs/git-push#Documentation/git-push.txt-pushautoSetupRemote
+autoSetupRemote = true
+followtags = true
+
+[rebase]
+autosquash = true
+autostash = true
+missingCommitsCheck = error
+# https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+updateRefs = true
+
+[rerere]
+enabled = true
+
+[status]
+submoduleSummary = true
+
+[submodule]
+recurse = true
+
+[fetch]
+prune = true
+pruneTags = true
+fsckObjects = true
+[receive]
+fsckObjects = true
+[transfer]
+fsckObjects = true
+
+[credential]
+helper = store
+
+[url "https://github.com/"]
+insteadOf = "gh:"
+
+[branch]
+sort = -committerdate
+[tag]
+sort = -taggerdate
+
+[user]
+name = Joshua Bronson
+email = jabronson@gmail.com
+
+[include]
+path = ~/.gitconfig-override
