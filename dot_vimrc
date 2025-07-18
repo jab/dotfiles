@@ -1,4 +1,5 @@
 autocmd!
+set mouse=
 set nocompatible
 set hidden  " allow unsaved background buffers and remember marks/undo for them
 set history=10000  " remember more commands and search history
