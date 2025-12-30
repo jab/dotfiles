@@ -16,6 +16,8 @@ abbr -a -- r '$GREP'
 
 abbr -a -- ppath 'echo $PATH | tr " " \\n | nl'
 
+abbr -a -- nsp 'nix-shell --command fish -p'
+
 abbr -a -- g 'git'
 abbr -a -- gs 'git switch'
 abbr -a -- g- 'git switch -'

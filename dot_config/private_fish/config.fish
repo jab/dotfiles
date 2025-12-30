@@ -10,8 +10,12 @@ if status is-interactive
   set_to_first_on_path PAGER "nvimpager vimpager"
   set_to_first_on_path GREP "rg grep"
 
-  if type -q starship
-    starship init fish | source
+  fish_config theme choose 'ayu Mirage'
+  # Prefer https://github.com/IlanCosman/tide, fall back to starship if installed
+  if ! set -q tide_character_color
+    if type -q starship
+      starship init fish | source
+    end
   end
 
   if type -q direnv

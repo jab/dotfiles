@@ -22,6 +22,8 @@
           # Disable nix-darwin's management of nix for compatibility with Determinate Nix.
           nix.enable = false;
 
+          system.primaryUser = "jab";
+
           # Enable alternative shell support in nix-darwin.
           programs.fish.enable = true;
 
@@ -35,16 +37,19 @@
           # The platform the configuration will be used on.
           nixpkgs.hostPlatform = "aarch64-darwin";
 
+          # https://github.com/NixOS/nixpkgs/blob/dc9637/pkgs/by-name/cl/claude-code/package.nix#L44
+          nixpkgs.config.allowUnfree = true;
+
           # https://github.com/LnL7/nix-darwin/issues/1339
           ids.gids.nixbld = 30000;
 
           homebrew.enable = true;
           homebrew.casks = [
             "iterm2"
+            "linearmouse"
             "maccy"
             "obsidian"
             "qlmarkdown"
-            "scroll-reverser"
             "visual-studio-code"
           ];
 
